@@ -52,4 +52,4 @@ else
 {
     Logging -Message "Certificate not renewed within the last 7 days"
 }
-Logging -Message "Script complete $(Get-Date)"
+Logging -Message "Script complete $(Get-Date)`n"

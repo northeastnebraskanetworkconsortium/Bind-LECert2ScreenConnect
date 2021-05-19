@@ -21,6 +21,11 @@ function Logging {
 }
 
 # Define log file and make initial entry to indicate this script has run
+if(!(Test-Path C:\certs))
+{
+    # Create directory if not previously exists
+    New-Item -ItemType Directory -Path c:\certs
+}
 $LogFile = 'c:\certs\SSLCert.log'
 Logging -Message "Script start $(Get-Date)"
         

@@ -68,7 +68,7 @@ try{
             # Bind new SSL certificate to port 443
             try{
                 Logging -Message "Bind new SSL certificate to port 443 for Screen Connect's use"
-                if(netsh http add sslcert ipport=0.0.0.0:443 certhash=$($importedCert.Thumbprint) appid="{00000000-0000-0000-0000-000000000000}" | Where-Object {$_ -match "successfully"}
+                if(netsh http add sslcert ipport=0.0.0.0:443 certhash=$($importedCert.Thumbprint) appid="{00000000-0000-0000-0000-000000000000}" | Where-Object {$_ -match "successfully"})
                 {
                     Logging -Message "Bind new SSL certificate successful"
                 }

@@ -1,4 +1,4 @@
-# Update-ScreenConnectLECert
+# Bind-LECert2ScreenConnect
 This script automates the process of importing the Let's Encrypt SSL Certificate into Windows and binds it to ConnectWise Control.  This script does not handle the original issuance of the SSL certificate or the renewals, but this document will attempt to walk the user through the process.
 
 ## Prerequisites

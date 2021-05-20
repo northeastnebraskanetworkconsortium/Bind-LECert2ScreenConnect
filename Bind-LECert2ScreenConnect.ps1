@@ -1,9 +1,9 @@
-#  Update-ScreenConnectLECert.ps1
+#  Bind-LECert2ScreenConnect.ps1
 #
-#  ScreenConnect / Let's Encrypt / Cerbot Script
+#  ConnectWise Control / Let's Encrypt / Cerbot Script
 #
 #  This script takes a Let's Encrypt SSL certificate by Certbot
-#  and applies it to the local Screen Connect server
+#  and applies it to the local ConnectWise Control server
 #  
 #  Prerequisites:
 #    - Certbot is installed and the certificate has been issued

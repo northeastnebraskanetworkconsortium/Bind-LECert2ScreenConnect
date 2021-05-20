@@ -1,4 +1,5 @@
 #  Bind-LECert2ScreenConnect.ps1
+#  https://github.com/northeastnebraskanetworkconsortium/Bind-LECert2ScreenConnect
 #
 #  ConnectWise Control / Let's Encrypt / Cerbot Script
 #

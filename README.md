@@ -56,7 +56,7 @@ IMPORTANT NOTES:
    Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
 ```
-Once the certificate is issued, as noted in the output provided, you can locate your certificate at `C:\Certbot\live\connect.domain.com\`
+Once the certificate is issued, as noted in the output provided, you can locate your certificate at `C:\Certbot\live\connect.domain.com\`.  If this certificate is issued for multiple domains, the first domain submitted will be the name of the folder and the considered the primary domain of the certificate and listed as the issued domain.  Any additional domains are valid and will be listed in the Subject Alternative Name details.
 
 ## openssl
 openssl is used to take the .pem files provided by Certbot and convert them to a PFX so the script can import them into Windows and then ConnectWise Control.  If openssl is not already installed on the ConnectWise Control server, follow the instructions below.
@@ -90,3 +90,5 @@ This XML file is a sample scheduled task that can be imported into the Windows T
 
 ## Notes
 This script does create a PFX and stores it in the `C:\certs\` folder.  This script, however, does not delete any PFX file.  Additionally, the log file created will grow indefinitely and may need to be pruned or deleted over time.  This will be a manual task as the script does not address it.
+
+The script has not been tested on systems with multiple SSL certificates issued by Certbot and may potentially not work correctly if more than one certificate has been issued for that machine.

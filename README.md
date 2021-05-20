@@ -71,3 +71,22 @@ Please note that Chocolatey is not required to install openssl; it's just the me
 
 ### Configure openssl
 As outlined on the [https://adamtheautomator.com/openssl-windows-10/](https://adamtheautomator.com/openssl-windows-10/) instructions, openssl requires the `openssl.cnf` file to exist and configured.  Per these instructions, the `C:\certs` directory is created to contain the `openssl.cnf` file.  This directory is also referenced in the script as the location to capture and store the PFX file.  Once the `openssl.cnf` file is created and the Powershell profile is updated the remainder of the instructions are not necessary for this task (although if openssl is to be used for other reasons, it is recommended to follow the rest of the document).
+
+## Script usage
+The script `Bind-LECert2ScreenConnect.ps1` is designed to be located in the `C:\certs\` folder.  The `C:\certs\` folder also will receive the created PFX certificates and contain the log file.  A scheduled task can be used to run this script on a schedule.  This script can be ran on its own without the need for arguments to be passed.
+
+## Bind-LECert2ScreenConnect.xml
+This XML file is a sample scheduled task that can be imported into the Windows Task Scheduler to handle the automatic renewal process. This scheduled task is scheduled to run weekly on Monday at 2:00PM.  There are a few modifications that will need to be made following the import:
+
+- General Tab
+    - Change User or Group
+        - Use administrator account, either local or domain
+- Triggers
+    - Change date / time (optional)
+- Actions
+    - Edit Task
+        - Start in
+            - Replace with path of actual location of the script
+
+## Notes
+This script does create a PFX and stores it in the `C:\certs\` folder.  This script, however, does not delete any PFX file.  Additionally, the log file created will grow indefinitely and may need to be pruned or deleted over time.  This will be a manual task as the script does not address it.
